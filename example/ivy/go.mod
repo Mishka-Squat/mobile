@@ -1,6 +1,6 @@
 module golang.org/x/mobile/example/ivy
 
-go 1.23.0
+go 1.25
 
 require (
 	golang.org/x/mobile v0.0.0-20210924032853-1c027f395ef7
