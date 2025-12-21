@@ -6,14 +6,13 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
 )
 
 func TestNdkRoot(t *testing.T) {
-	home, err := ioutil.TempDir(os.Getenv("GOTMPDIR"), "gomobile-test-")
+	home, err := os.MkdirTemp(os.Getenv("GOTMPDIR"), "gomobile-test-")
 	if err != nil {
 		t.Fatal(err)
 	}

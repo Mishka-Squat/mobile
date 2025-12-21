@@ -13,7 +13,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"path"
@@ -131,7 +130,7 @@ func goAndroidBuild(pkg *packages.Package, bundleID string, targets []targetInfo
 			fmt.Fprintf(os.Stderr, "apk: %s\n", name)
 		}
 		if buildN {
-			return ioutil.Discard, nil
+			return io.Discard, nil
 		}
 		return apkw.Create(name)
 	}
