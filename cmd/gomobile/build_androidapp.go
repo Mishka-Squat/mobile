@@ -188,7 +188,10 @@ func goAndroidBuild(pkg *packages.Package, bundleID string, targets []targetInfo
 	var arsc struct {
 		iconPath string
 	}
-	assetsDir := filepath.Join(dir, "assets")
+	assetsDir := buildAssets
+	if !filepath.IsAbs(buildAssets) {
+		assetsDir = filepath.Join(filepath.Dir(pkg.GoFiles[0]), buildAssets)
+	}
 	assetsDirExists := true
 	fi, err := os.Stat(assetsDir)
 	if err != nil {

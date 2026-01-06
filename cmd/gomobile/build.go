@@ -242,6 +242,7 @@ var (
 	buildV          bool        // -v
 	buildX          bool        // -x
 	buildO          string      // -o
+	buildAssets     string      // -assets
 	buildGcflags    string      // -gcflags
 	buildLdflags    string      // -ldflags
 	buildTarget     string      // -target
@@ -266,6 +267,7 @@ func addBuildFlags(cmd *command) {
 	cmd.flag.BoolVar(&buildI, "i", false, "")
 	cmd.flag.BoolVar(&buildTrimpath, "trimpath", false, "")
 	cmd.flag.Var(&buildTags, "tags", "")
+	cmd.flag.StringVar(&buildAssets, "assets", "./assets", "Path to assets dir")
 }
 
 func addBuildFlagsNVXWork(cmd *command) {
