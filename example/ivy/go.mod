@@ -3,7 +3,7 @@ module golang.org/x/mobile/example/ivy
 go 1.24.0
 
 require (
-	golang.org/x/mobile v0.0.0-20260120165949-40bd9ace6ce4
+	golang.org/x/mobile v0.0.0-20260204172633-1dceadbbeea3
 	robpike.io/ivy v0.5.0
 )
 
