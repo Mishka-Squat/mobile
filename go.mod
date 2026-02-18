@@ -3,7 +3,7 @@ module golang.org/x/mobile
 go 1.25.0
 
 require (
-	golang.org/x/exp/shiny v0.0.0-20260212183809-81e46e3db34a
+	golang.org/x/exp/shiny v0.0.0-20260218203240-3dfff04db8fa
 	golang.org/x/image v0.36.0
 	golang.org/x/mod v0.33.0
 	golang.org/x/sync v0.19.0
