@@ -169,7 +169,10 @@ func buildAAR(srcDir, androidDir string, pkgs []*packages.Package, targets []tar
 	for _, pkg := range pkgs {
 		// TODO(hajimehoshi): This works only with Go tools that assume all source files are in one directory.
 		// Fix this to work with other Go tools.
-		assetsDir := filepath.Join(filepath.Dir(pkg.GoFiles[0]), "assets")
+		assetsDir := buildAssets
+		if !filepath.IsAbs(buildAssets) {
+			assetsDir = filepath.Join(filepath.Dir(pkg.GoFiles[0]), buildAssets)
+		}
 		assetsDirExists := false
 		if fi, err := os.Stat(assetsDir); err == nil {
 			assetsDirExists = fi.IsDir()

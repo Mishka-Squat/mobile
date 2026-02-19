@@ -211,7 +211,7 @@ func TestBuildWithGoModules(t *testing.T) {
 		t.Skipf("gomobile are not available on %s", runtime.GOOS)
 	}
 
-	dir, err := os.MkdirTemp("", "gomobile-test")
+	dir, err := os.MkdirTemp(os.Getenv("GOTMPDIR"), "gomobile-test")
 	if err != nil {
 		t.Fatal(err)
 	}

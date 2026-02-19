@@ -305,7 +305,7 @@ func TestGenJava(t *testing.T) {
 			}
 			tmpGopath := ""
 			if len(classes) > 0 {
-				tmpGopath, err = os.MkdirTemp(os.TempDir(), "gomobile-bind-test-")
+				tmpGopath, err = os.MkdirTemp(os.Getenv("GOTMPDIR"), "gomobile-bind-test-")
 				if err != nil {
 					t.Fatal(err)
 				}
@@ -422,7 +422,7 @@ func TestGenGoJavaWrappers(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		tmpGopath, err := os.MkdirTemp(os.TempDir(), "gomobile-bind-test-")
+		tmpGopath, err := os.MkdirTemp(os.Getenv("GOTMPDIR"), "gomobile-bind-test-")
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -452,7 +452,7 @@ func TestGenGoObjcWrappers(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		tmpGopath, err := os.MkdirTemp(os.TempDir(), "gomobile-bind-test-")
+		tmpGopath, err := os.MkdirTemp(os.Getenv("GOTMPDIR"), "gomobile-bind-test-")
 		if err != nil {
 			t.Fatal(err)
 		}

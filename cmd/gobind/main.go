@@ -101,7 +101,7 @@ func run() {
 	if len(classes) > 0 || len(otypes) > 0 {
 		srcDir := *outdir
 		if srcDir == "" {
-			srcDir, err = os.MkdirTemp(os.TempDir(), "gobind-")
+			srcDir, err = os.MkdirTemp(os.Getenv("GOTMPDIR"), "gobind-")
 			if err != nil {
 				log.Fatal(err)
 			}
